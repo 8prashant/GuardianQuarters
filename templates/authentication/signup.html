@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+
+    <title>Signup</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="static/css/animate.css">
+    
+	<link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/flaticon.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body style="background-image: url('static/images/4.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+              <img src="https://finder-react.createx.studio/images/signin-modal/signup.svg"
+                class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+                <form method="post" action="/signup" class="mb-2">
+
+        
+        {% csrf_token %}
+                <br>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Create A Username (use only letters and numbers)" Required>
+                </div>
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter Your First Name" Required>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Your Last Name" Required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email Address" Required>
+                </div>
+                <div class="form-group">
+                    <label for="pass1">Password</label>
+                    <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Create Your Password" Required>
+                </div>
+                <div class="form-group">
+                    <label for="pass2">Confirm Password</label>
+                    <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Confirm Your Password" Required>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+
+    </form>
+    <a class="form-group" href="signin ">Already have an account?</a>
+
+</body>
+</html>
